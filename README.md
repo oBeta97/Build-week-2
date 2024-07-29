@@ -1,4 +1,16 @@
-martedì: fare l'html e css di tutte le pagine, ognuno di noi prova a fare una pagina
-mercoledì: iniziare lato js
-giovedì: finire lato js per
-venerdì: rifinire gli ultimi dettagli
+# Piano di Lavoro del Progetto
+
+## Obiettivi della Settimana
+
+### Martedì
+- Creare l'HTML e il CSS di tutte le pagine
+- Ogni membro del team prova a creare una pagina
+
+### Mercoledì
+- Iniziare lo sviluppo del lato JavaScript
+
+### Giovedì
+- Completare lo sviluppo del lato JavaScript
+
+### Venerdì
+- Rifinire gli ultimi dettagli
