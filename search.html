@@ -15,7 +15,9 @@
 <body data-bs-theme="dark" class="vh-100">
     <div class="container-fluid vh-100">
         <div class="row row-col-3 flex-column flex-md-row vh-100">
-            <div class="col-12 col-md-3 bg-dark order-2 order-md-1 fixed-bottom sticky-md-top p-0" id="nav-list">
+            
+            <!-- NAVBAR -->
+            <div class="col-12 col-md-2 bg-dark order-2 order-md-1 fixed-bottom sticky-md-top p-0" id="nav-list">
                 <!-- navbar -->
                 <div class="container-md p-0 p-md-2">
                     <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4">
@@ -29,21 +31,21 @@
                             </li>
                             <li
                                 class="nav-item d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
-                                <i class="bi bi-search fs-4"></i>Cerca</li>
+                                <i class="bi bi-search fs-5"></i>Cerca</li>
                             <li
                                 class="nav-item d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
-                                <i class="bi bi-collection fs-4"></i>La tua Libreria</li>
+                                <i class="bi bi-collection fs-5"></i>La tua Libreria</li>
                         </ul>
                         <ul
                             class="navbar-nav d-none d-md-flex flex-row flex-md-column justify-content-around w-100 gap-2">
-                            <li class="nav-item d-flex gap-3">
-                                <i class="bi bi-plus-lg fs-4"></i>Crea Playlist
+                            <li class="nav-item d-flex gap-3 align-items-center">
+                                <i class="bi bi-plus-lg fs-5"></i>Crea Playlist
                             </li>
-                            <li class="nav-item d-flex gap-3">
-                                <i class="bi bi-heart fs-4"></i>Brani che ti Piacciono
+                            <li class="nav-item d-flex gap-3 align-items-center">
+                                <i class="bi bi-heart fs-5"></i>Brani che ti Piacciono
                             </li>
-                            <li class="nav-item d-flex gap-3">
-                                <i class="bi bi-bookmark fs-4"></i>I tuoi Episodi
+                            <li class="nav-item d-flex gap-3 align-items-center">
+                                <i class="bi bi-bookmark fs-5"></i>I tuoi Episodi
                             </li>
                         </ul>
 
@@ -59,9 +61,12 @@
 
 
             </div>
-            <div class="col-12 col-md-7 order-1 order-md-2 h-100">
+            
+            
+            <!-- MAIN -->
+            <div class="col-12 col-md-8 order-1 order-md-2 h-100">
 
-                <section class="container-md py-4">
+                <main class="container-md pt-4" id="mainContent">
 
                     <!-- SEARCHBAR -->
                     <div class="d-flex flex-column flex-md-row">
@@ -113,11 +118,10 @@
                             <span class="text-dark-emphasis">Mostra tutto</span>
                         </div>
 
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div id="recentSearchCarousel" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row row-cols-5">
-
                                         <div class="col">
                                             <div class="card">
                                                 <img src="./assets/imgs/search/image-12.jpg"
@@ -237,12 +241,12 @@
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                data-bs-target="#recentSearchCarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                data-bs-target="#recentSearchCarousel" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -330,8 +334,11 @@
 
 
                     </div>
-                </section>
+                </main>
             </div>
+            
+            
+            <!-- ASIDE -->
             <div class="col-12 col-md-2 d-none d-md-block order-3">
                 <aside>
                     <h6 class="fw-bold">Attività amici</h6>
@@ -387,12 +394,15 @@
             </div>
 
         </div>
-        <div class="fixed-bottom d-none d-md-block">ciao</div>
+        <div class="fixed-bottom d-none d-md-block" id="desktopMusicPlayer">
+            Player musicale
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="./assets/js/fixPagination.js"></script>
 </body>
 
 </html>
