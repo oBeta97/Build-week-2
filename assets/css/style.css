@@ -1,0 +1,18 @@
+*{
+    font-family:  CircularStd, sans-serif;
+}
+#card-body {
+    font-size: 0.8em;
+    margin-left: 10px;
+    p {
+        margin: 0;
+    }
+
+}
+#nav-list li {
+    font-size: 0.9em;
+}
+
+#nav-list i{
+    font-size: 1.2em;    
+}
