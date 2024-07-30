@@ -10,9 +10,15 @@
 
 }
 #nav-list li {
-    font-size: 0.8em;
-    
-   
+    font-size: 0.9em;
+}
+
+#nav-list i{
+    font-size: 1.2em;    
+}
+
+.search-card-img-container img{
+    transform: scale(1.8) rotate(25deg);
 }
 
 /* artist page*/
