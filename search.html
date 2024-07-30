@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPOTIFY - Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/circular-font.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-bs-theme="dark" class="vh-100">
+    <div class="container-fluid vh-100">
+        <div class="row row-col-3 flex-column flex-md-row vh-100">
+            <div class="col-12 col-md-3 bg-dark order-2 order-md-1 fixed-bottom sticky-md-top p-0" id="nav-list">
+                <!-- navbar -->
+                <div class="container-md p-0 p-md-2">
+                    <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4">
+                        <i class="bi bi-three-dots d-none d-md-block"></i>
+                        <div class="d-block d-md-none bg-primary w-100">ciao</div>
+                        <ul class="navbar-nav flex-row flex-md-column justify-content-around w-100 gap-2">
+                            <li
+                                class="nav-item fw-bold d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
+                                <i class="bi bi-house-door-fill fs-4"></i>
+                                <span>Home</span>
+                            </li>
+                            <li
+                                class="nav-item d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
+                                <i class="bi bi-search fs-4"></i>Cerca</li>
+                            <li
+                                class="nav-item d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
+                                <i class="bi bi-collection fs-4"></i>La tua Libreria</li>
+                        </ul>
+                        <ul
+                            class="navbar-nav d-none d-md-flex flex-row flex-md-column justify-content-around w-100 gap-2">
+                            <li class="nav-item d-flex gap-3">
+                                <i class="bi bi-plus-lg fs-4"></i>Crea Playlist
+                            </li>
+                            <li class="nav-item d-flex gap-3">
+                                <i class="bi bi-heart fs-4"></i>Brani che ti Piacciono
+                            </li>
+                            <li class="nav-item d-flex gap-3">
+                                <i class="bi bi-bookmark fs-4"></i>I tuoi Episodi
+                            </li>
+                        </ul>
+
+                        <hr class="border-bottom border-2 w-100 d-none d-md-block" />
+
+                        <ul class="navbar-nav d-none d-md-block">
+                            <li class="nav-item">ciao</li>
+                            <li class="nav-item">ciao</li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+
+            </div>
+            <div class="col-12 col-md-7 order-1 order-md-2 h-100">
+
+                <section class="container-md py-4">
+
+                    <!-- SEARCHBAR -->
+                    <div class="d-flex flex-column flex-md-row">
+
+                        <h1 class="my-4 d-md-none">Cerca</h1>
+
+                        <div class="d-flex flex-row w-100 align-items-center justify-content-between gap-5">
+
+                            <div class="d-flex flex-row align-items-center flex-grow-1">
+
+                                <a href="./index.html" class="d-none d-md-block text-decoration-none text-light fs-4">
+                                    <i class="bi bi-caret-left"></i>
+                                </a>
+
+
+                                <a href="javascript:void(0);"
+                                    class="d-none d-md-block text-decoration-none text-light fs-4 mx-1">
+                                    <i class="bi bi-caret-right"></i>
+                                </a>
+
+
+                                <div class="input-group my-4 w-100">
+                                    <span class="input-group-text border-0 bg-dark-subtle" id="basic-addon1">
+                                        <i class="bi bi-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control border-0 bg-dark-subtle"
+                                        placeholder="Cosa vuoi ascoltare?" aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3 d-none d-md-block">
+                                <i class="bi bi-bell"></i>
+                                <i class="bi bi-people"></i>
+                                <span class="badge rounded-circle bg-success">P</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RECENT SEARCHES -->
+                    <div class="d-flex flex-column gap-1 my-4 d-none d-md-block">
+                        <div class="d-flex flex-row justify-content-between">
+                            <h4>Ricerche recenti</h4>
+
+                            <span class="text-dark-emphasis">Mostra tutto</span>
+                        </div>
+
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row row-cols-5">
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row row-cols-5">
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card">
+                                                <img src="./assets/imgs/search/image-12.jpg"
+                                                    class="card-img-top rounded" alt="...">
+                                                <div class="card-body py-2 px-1">
+                                                    <p class="card-text m-0">Pietro DJ</p>
+                                                    <p class="card-text m-0"><small>Top of the pop</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+
+                    <h4 class="my-3">Sfoglia tutto</h4>
+                    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3">
+
+
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="search-card bg-danger rounded p-2 position-relative overflow-hidden">
+                                <h4 class="search-card-title">Podcast</h4>
+                                <div class=" search-card-img-container text-end">
+                                    <img src="./assets/imgs/search/image-1.jpeg"
+                                        class="img-fluid rounded w-25 search-card-img" alt="img1">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </section>
+            </div>
+            <div class="col-12 col-md-2 d-none d-md-block order-3">
+                <aside>
+                    <h6 class="fw-bold">Attività amici</h6>
+                    <div class="card border-0 py-2">
+                        <div class="row g-0">
+                            <div class="col-md-3 ">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle" alt="cover">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0" id="card-body">
+                                    <p class="card-title fw-bold">Pietro Romano</p>
+                                    <p class="card-text"><small>New kings•pippo</small></p>
+                                    <p class="card-text"><small class="text-body-secondary"><i
+                                                class="bi bi-music-note-beamed"></i> bocc</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 py-2">
+                        <div class="row g-0">
+                            <div class="col-md-3 ">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle" alt="cover">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0" id="card-body">
+                                    <p class="card-title fw-bold">Paolo Pellizzari</p>
+                                    <p class="card-text"><small>sesso&samba•pluto</small></p>
+                                    <p class="card-text"><small class="text-body-secondary"><i
+                                                class="bi bi-music-note-beamed"></i> little point</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 py-2">
+                        <div class="row g-0">
+                            <div class="col-md-3 ">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle" alt="cover">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0" id="card-body">
+                                    <p class="card-title fw-bold">Marco Widesott</p>
+                                    <p class="card-text"><small>Bongo bong</small></p>
+                                    <p class="card-text"><small class="text-body-secondary"><i
+                                                class="bi bi-music-note-beamed"></i> Maracaibo</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+        <div class="fixed-bottom d-none d-md-block">ciao</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
