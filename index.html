@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Homepage - Spotify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,7 +15,7 @@
 <body data-bs-theme="dark" class="vh-100">
     <div class="container-fluid vh-100">
         <div class="row row-col-3 flex-column flex-md-row vh-100">
-            <div class="col-12 col-md-3 bg-dark order-2 order-md-1 fixed-bottom sticky-md-top p-0  opacity-0"
+            <div class="col-12 col-md-3 bg-dark order-2 order-md-1 fixed-bottom sticky-md-top p-0 "
                 id="nav-list ">
                 <!-- navbar -->
                 <div class="container-md p-0 p-md-2">
@@ -51,8 +51,56 @@
             </div>
             <main class="col-12 col-md-7 order-1 order-md-2 p-0">
                 <!-- ciao questo è il main -->
-                <div
-                    class="container p-0 p-md-2  d-flex justify-content-between mt-3 px-4 d-md-none d-sm-flex align-items-center mx-0">
+                <div class="container d-sm-none d-md-flex mt-3 d-flex flex-row justify-content-between align-items-center">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#5f6368">
+                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#5f6368">
+                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                        </svg>
+                    </div>
+                    <div class="pe-3">
+                        <button class="btn btn-custom d-flex align-items-center btn-a rounded-5">
+                            <img src="./assets/imgs/main/image-10.jpg" alt="cover" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+                            <span class="ms-2 text-white pe-2">Testo del Bottone... </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="container-fluid px-4 d-sm-none d-md-flex my-4">
+                    <div class="sfondo rounded-2 flex-grow-1">
+                        <div class="col-sm-12 col-md-12 d-flex flex-row mb-3  p-2 ps-3 mt-3">
+                            <div class="row flex-grow-1">
+                                <div class="col-4">
+                                    <img src="./assets/imgs/main/image-11.jpg" class="img-fluid" alt="cover">
+                                </div>
+                                <div class="px-4 col-5 d-flex flex-column">
+                                    <p class="small m-1"><span class="fs-6 small">album</span></p>
+                                    <h2 class="big">album</h2>
+                                    <p class="small">artista</p>
+                                    <p class="small">ascolta</p>
+                                    <div class="d-flex flex-row">
+                                        <button class="btn btn-success d-flex align-items-center rounded-5 me-3">
+                                            <span class="px-2 text-white text-nowrap small">play</span>
+                                        </button>
+                                        <button class="btn btn-custom d-flex align-items-center border-white rounded-5">
+                                            <span class="px-2 text-white small">Salva</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-custom d-flex align-items-center btn-a rounded-4 ">
+                                        <span class="px-2 text-white small">Nascondi annunci </span>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container p-0 p-md-2  d-flex justify-content-between mt-3 px-4 d-md-none d-sm-flex align-items-center mx-0">
                     <div>
                         <h2>Buonasera</h2>
                     </div>
@@ -70,47 +118,112 @@
                     <p>Podcast e show</p>
                 </div>
                 <div class="card border-0 px-4 py-3">
-                    <div class="row g-0">
-                        <div class="col-sm-6 col-md-3 d-flex flex-row align-items-center mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" alt="cover"
+                    <h2 class="d-none d-md-flex mb-3 fw-bold">Buonasera</h2>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 d-flex flex-row align-items-center mb-4 bg-cards1">
+                            <div class="d-flex align-items-center bg-md-gray flex-grow-1 rounded-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-3" alt="cover"
                                     style="max-width: 65px;">
-                                <p class="card-title fw-bold mb-0 ps-3">Titolo album</p>
+                                <p class="card-title fw-bold mb-0 ps-3 pe-5">Titolo album</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 d-flex flex-row align-items-center mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" alt="cover"
+                        <div class="col-sm-6 col-md-4 d-flex flex-row align-items-center bg-cards1 mb-4">
+                            <div class="d-flex align-items-center bg-md-gray flex-grow-1 rounded-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-3" alt="cover"
                                     style="max-width: 65px;">
-                                <p class="card-title fw-bold mb-0 ps-3">Titolo album</p>
+                                <p class="card-title fw-bold mb-0 ps-3 pe-5">Titolo album</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 d-flex flex-row align-items-center mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" alt="cover"
+                        <div class="col-sm-6 col-md-4 d-flex flex-row align-items-center bg-cards1 mb-4">
+                            <div class="d-flex align-items-center bg-md-gray flex-grow-1 rounded-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-3" alt="cover"
                                     style="max-width: 65px;">
-                                <p class="card-title fw-bold mb-0 ps-3">Titolo album</p>
+                                <p class="card-title fw-bold mb-0 ps-3 pe-5">Titolo album</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 d-flex flex-row align-items-center mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" alt="cover"
+                        <div class="col-sm-6 col-md-4 d-flex flex-row align-items-center bg-cards1 mb-4">
+                            <div class="d-flex align-items-center bg-md-gray flex-grow-1 rounded-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-3" alt="cover"
                                     style="max-width: 65px;">
-                                <p class="card-title fw-bold mb-0 ps-3">Titolo album</p>
+                                <p class="card-title fw-bold mb-0 ps-3 pe-5">Titolo album</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 d-flex flex-row align-items-center mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" alt="cover"
+                        <div class="col-sm-6 col-md-4 d-flex flex-row align-items-center bg-cards1 mb-4">
+                            <div class="d-flex align-items-center bg-md-gray flex-grow-1 rounded-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-3" alt="cover"
                                     style="max-width: 65px;">
-                                <p class="card-title fw-bold mb-0 ps-3">Titolo album</p>
+                                <p class="card-title fw-bold mb-0 ps-3 pe-5">Titolo album</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 d-flex flex-row align-items-center mb-2">
-                            <div class="d-flex align-items-center">
-                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid" alt="cover"
+                        <div class="col-sm-6 col-md-4 d-flex flex-row align-items-center bg-cards1 mb-4">
+                            <div class="d-flex align-items-center bg-md-gray flex-grow-1 rounded-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-3" alt="cover"
                                     style="max-width: 65px;">
-                                <p class="card-title fw-bold mb-0 ps-3">Titolo album</p>
+                                <p class="card-title fw-bold mb-0 ps-3 pe-5">Titolo album</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 px-4 d-none d-md-flex mb-3 flex-row justify-content-between align-items-center">
+                    <!-- partefinale -->
+                    <h2 class="fw-bold">Altro di ciò che ti piace</h2>
+                    <p>VISUALIZZA TUTTO</p>
+                </div>
+                <div class="container-fluid d-none d-md-flex mb-3">
+                    <div class="row row-cols-5 card-container d-flex flex-wrap gap-0">
+                        <!-- Card 1 -->
+                        <div class="col">
+                            <div class="card border-0 bg-cards">
+                                <img src="assets/imgs/main/image-12.jpg" class="card-img-top p-3" alt="Card image 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text"></p>
+                                    <p class="small">descrizione</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col">
+                            <div class="card border-0 bg-cards">
+                                <img src="assets/imgs/main/image-12.jpg" class="card-img-top p-3" alt="Card image 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text"></p>
+                                    <p class="small">descrizione</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col">
+                            <div class="card border-0 bg-cards">
+                                <img src="assets/imgs/main/image-12.jpg" class="card-img-top p-3" alt="Card image 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text"></p>
+                                    <p class="small">descrizione</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col">
+                            <div class="card border-0 bg-cards">
+                                <img src="assets/imgs/main/image-12.jpg" class="card-img-top p-3" alt="Card image 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text"></p>
+                                    <p class="small">descrizione</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="col">
+                            <div class="card border-0 bg-cards">
+                                <img src="assets/imgs/main/image-12.jpg" class="card-img-top p-3" alt="Card image 5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text"></p>
+                                    <p class="small">descrizione</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -131,8 +244,8 @@
                         <div class=" d-flex flex-row justify-content-between px-4">
                             <div class="d-flex flex-row gap-4">
                                 <i class="bi bi-heart fs-5"></i>
-                                <svg class="fs-5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                    width="24px" fill="#5f6368">
+                                <svg class="fs-5" xmlns="http://www.w3.org/2000/svg" height="24px"
+                                    viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                                     <path
                                         d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
                                 </svg>
@@ -143,7 +256,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="container-fluid px-4 d-md-none">
                     <div class="sfondo rounded-4">
@@ -161,8 +273,8 @@
                         <div class=" d-flex flex-row justify-content-between px-4">
                             <div class="d-flex flex-row gap-4">
                                 <i class="bi bi-heart fs-5"></i>
-                                <svg class="fs-5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                    width="24px" fill="#5f6368">
+                                <svg class="fs-5" xmlns="http://www.w3.org/2000/svg" height="24px"
+                                    viewBox="0 -960 960 960" width="24px" fill="#5f6368">
                                     <path
                                         d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
                                 </svg>
