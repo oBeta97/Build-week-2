@@ -10,7 +10,9 @@
 
 }
 #nav-list li {
-    font-size: 0.8em;
-    
-   
+    font-size: 0.9em;
+}
+
+#nav-list i{
+    font-size: 1.2em;    
 }
