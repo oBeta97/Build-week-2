@@ -1,6 +1,7 @@
 *{
     font-family:  CircularStd, sans-serif;
 }
+
 #card-body {
     font-size: 0.8em;
     margin-left: 10px;
@@ -103,5 +104,8 @@
   
   .timeline-slider:focus::-webkit-slider-runnable-track {
     background: #ccc;
+  }
+  #main-container {
+    background: linear-gradient(0deg, rgba(6,2,0,1) 0%, rgba(25,135,84,1) 100%);
   }
   
