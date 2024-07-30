@@ -17,6 +17,26 @@
 #nav-list i{
     font-size: 1.2em;    
 }
+
+.search-card-img-container img{
+    transform: scale(1.8) rotate(25deg);
+}
+
+/* artist page*/
+#bannerArtist {
+    height: 40vh;
+}
+
+#artistRow {
+    /* opacity: 0.9; */
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgb(0, 0, 0) 65%, rgba(0, 0, 0, 0.732) 100%);
+}
+
+.top3Images {
+    width: 50px;
+    height: 50px;
+}
 .player {
     width: 100%;
     height: 80px; /* Adjust as needed */
