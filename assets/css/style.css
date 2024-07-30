@@ -16,3 +16,7 @@
 #nav-list i{
     font-size: 1.2em;    
 }
+
+.search-card-img-container img{
+    transform: scale(1.8) rotate(25deg);
+}
