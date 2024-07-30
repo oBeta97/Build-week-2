@@ -22,7 +22,6 @@
     height: 80px; /* Adjust as needed */
     position: fixed;
     bottom: 0;
-    background-color: var(--black);
     display: flex;
     justify-content: space-between;
     align-items: center;
