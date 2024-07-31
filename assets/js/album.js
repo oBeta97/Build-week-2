@@ -12,9 +12,17 @@ async function createPage(albumId) {
     const album = await getAlbum(albumId);
     console.log(album)
 
+    function convertSecondsToMinutes(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+
+
     let songs = '';
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
+        const duration = convertSecondsToMinutes(album.tracks.data[i].duration)
         songs += `
      <div class="col-1 d-none d-md-block" id="6628424">
                 <p class="text-secondary">
@@ -33,7 +41,7 @@ async function createPage(albumId) {
               </div>
 
               <div class="col-1 d-none d-md-block">
-                <p>${album.tracks.data[i].duration}</p>
+                <p>${duration}</p>
               </div>
     `
     }
@@ -64,7 +72,7 @@ async function createPage(albumId) {
                     </div>
                   </div>
                   <p class="card-text pt-2 text-secondary fw-semibold">
-                    <small>Album • ${album.genres.release_date}</small>
+                    <small>Album • ${album.release_date}</small>
                   </p>
                 </div>
               </div>
