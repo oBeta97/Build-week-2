@@ -6,21 +6,73 @@
 // aggiungo l'innertext che cambia il testo da play a pausa ad ogni click
 
 let audio = null;
+let timer = null;
+const playButton = document.getElementById('playButton')
+const playCenter = document.getElementById('playCenter')
 
-document.getElementById('playButton').addEventListener('click', function() {
+playButton.addEventListener('click', function() {
 
     
       if (audio && !audio.paused) {
         audio.pause();
         this.innerHTML = `<span class="px-2 text-white text-nowrap small">play</span>`
-        console.log('Audio paused');
+        playCenter.src = "./assets/imgs/icons/play_musicbar.png"
+        // console.log('Audio paused');
       } else {
         const audioUrl = this.getAttribute('data-previewSong');
         if (!audio) {
           audio = new Audio(audioUrl);
         }
         audio.play();
+        startTimer();
         this.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`
-        console.log('Playing audio:', audioUrl);
+        playCenter.src = "./assets/imgs/icons/pause_musicbar.png"
+        // console.log('Playing audio:', audioUrl);
       }
     });
+
+    playCenter.addEventListener('click', function() {
+        if (audio && !audio.paused) {
+            audio.pause();
+            this.src = "./assets/imgs/icons/play_musicbar.png"
+            this.innerHTML = `<span class="px-2 text-white text-nowrap small">play</span>`
+
+          } else {
+            const audioUrl = this.getAttribute('data-previewSong');
+            if (!audio) {
+              audio = new Audio(audioUrl);
+            }
+            audio.play();
+            startTimer();
+            this.src = "./assets/imgs/icons/pause_musicbar.png"
+            this.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`
+            // console.log('Playing audio:', audioUrl);
+          }
+    })
+
+
+
+    // prendo id del imput del volume e creo la funzione
+    document.getElementById('volumeSlider').addEventListener('input', function() {
+        if (audio) {
+          audio.volume = this.value / 100;
+          // console.log(this.value);
+        }
+      });
+
+      document.getElementById('timelineSlider').addEventListener('input', function() {
+        if (audio) {
+          const value = this.value;
+          const duration = audio.duration;
+          audio.currentTime = (value / 100) * duration;
+          updateTimeDisplays();
+        }
+      });
+
+      function startTimer() {
+        timer = setInterval(() =>{
+
+        })
+      }
+        
+      

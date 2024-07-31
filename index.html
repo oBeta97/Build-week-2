@@ -579,6 +579,7 @@
                 src="./assets/imgs/icons/previous_musicbar.png"
               />
               <img
+              id="playCenter"
                 style="height: 2rem; margin-right: 1rem"
                 src="./assets/imgs/icons/play_musicbar.png"
               />
@@ -592,16 +593,17 @@
               />
             </div>
             <div class="player-timeline">
-              <span class="current-time">0:00</span>
+              <span class="current-time" id="currentTime">0:00</span>
               <input
                 type="range"
+                id="timelineSlider"
                 class="timeline-slider rounded-pill"
                 min="0"
                 max="100"
                 step="1"
                 value="0"
               />
-              <span class="total-time">0:00</span>
+              <span class="total-time" id="totalTime">0:00</span>
             </div>
           </div>
 
@@ -623,6 +625,7 @@
             />
             <input
               type="range"
+              id="volumeSlider"
               class="volume-slider rounded-pill"
               min="0"
               max="100"
