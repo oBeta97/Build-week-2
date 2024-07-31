@@ -79,10 +79,10 @@ async function getAlbum(albumId){
 // teamone = timone xdxdxdxdxd
 async function getSearch(query){
 
-    if(albumId === undefined)
+    if(query === undefined)
         throw new Error('getSearch necessita di una query');
 
-    return await fetch(`${connectionString}/search?q=${query}`, {
+    return await fetch(`${connectionString}/search?q="${query}"`, {
         method: "GET"
     }).
     then(function(promise){
