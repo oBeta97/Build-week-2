@@ -10,5 +10,4 @@ window.addEventListener("load", function(event){
         mainContentDiv.style.paddingBottom = `calc(${desktopMusicPlayerDiv.offsetHeight}px + 2em)`;
     }
 
-
 });

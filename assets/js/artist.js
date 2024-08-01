@@ -1,6 +1,18 @@
+const mainContent = document.getElementById('mainContent')
 window.addEventListener("load", function (event) {
     const artistId = new URLSearchParams(location.search).get('artistId');
     console.log('artisti', artistId);
+
+    if(!artistId){
+      mainContent.innerHTML = `
+        <div class="vh-100 w-100 d-flex justify-content-center align-items-center">
+          <h2> 404 Not Found</h2>
+        </div>
+      `;
+      return;
+    }
+    
+    
     getArtistId(artistId)
 })
 
@@ -10,6 +22,7 @@ async function getArtistId (artistId) {
     console.log('artisti', newArtistId)
 
     const mainContent = document.getElementById('mainContent')
+
     mainContent.innerHTML = ` 
         <div class="row px-4 m-0 d-flex align-items-end pb-3" id="bannerArtist" style = 'background-image:url(${newArtistId.picture_xl});background-size: cover;background-repeat:no-repeat;'>
           <div id="..." class="col">
@@ -56,22 +69,20 @@ async function getTracklist (url) {
     for (let i=0; i<tracklist.data.length ;i++) {
         tracklistDiv.innerHTML += `
         <div class="row d-flex align-items-center mb-2">
-              <div class="col-1 text-end">
+              <div class="col-1 text-center">
                 <small id="trackNumber">${i+1}</small>
               </div>
               <div class="col-2">
-                <a href="#">
                   <img class="top3Images rounded-1" src="${tracklist.data[i].album.cover}" />
-                </a>
               </div>
               <div class="col-6">
-                <a href="#"><small id="trackTitle">${tracklist.data[i].title}</small></a>
+                <small id="trackTitle">${tracklist.data[i].title}</small></a>
                 <div class="d-block d-md-none">
                   <a href="#"><small id="trackReprod">${tracklist.data[i].rank}</small></a>
                 </div>
               </div>
               <div class="col-2 text-end d-none d-md-block">
-                <a href="#"><small id="trackReprod">${tracklist.data[i].rank}</small></a>
+                <small id="trackReprod">${tracklist.data[i].rank}</small>
               </div>
               <div class="col-1 ms-auto">
                 <i class="bi bi-three-dots-vertical"></i>

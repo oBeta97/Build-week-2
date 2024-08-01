@@ -1,8 +1,20 @@
+const mainContent = document.getElementById('mainContent')
 
 
 window.addEventListener("load", function (event) {
 
     const eventUpdate = new URLSearchParams(location.search).get('albumId')
+
+    if(!eventUpdate){
+      mainContent.innerHTML = `
+        <div class="vh-100 w-100 d-flex justify-content-center align-items-center">
+          <h2> 404 Not Found</h2>
+        </div>
+      `;
+      return;
+    }
+    
+
     createPage(eventUpdate)
 
 })
@@ -16,21 +28,15 @@ async function createPage(albumId) {
       throw new Error(album.error ? album.error.message : 'Nessun dato disponibile per questo album.');
   }
 
-    function convertSecondsToMinutes(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainingSeconds = seconds % 60;
-        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-    }
-
-
     let songs = '';
 
-    for (let i = 0; i < 5; i++) {
-        const duration = convertSecondsToMinutes(album.tracks.data[i].duration);
+    for (let i = 0; i < album.tracks.data.length; i++) {
+        const duration = formatTime(album.tracks.data[i].duration)
         const rankFormatted = album.tracks.data[i].rank.toLocaleString();
+      
         songs += `
      <div class="col-1 d-none d-md-block" id="6628424">
-                <p class="text-secondary">
+                <p class="text-secondary text-center">
                   ${i + 1}
                 </p>
               </div>
@@ -48,14 +54,13 @@ async function createPage(albumId) {
               <div class="col-1 d-none d-md-block">
                 <p>${duration}</p>
               </div>
-    `
+    `;
     }
-    const mainContent = document.getElementById('mainContent')
     mainContent.innerHTML = `
     <div class="row">
           <div class="col-12 d-flex flex-column justify-content-center align-items-center ">
 
-            <div class="row hero-section">
+            <div class="row hero-section w-100">
 
               <div class="position-sticky top-0 left-0">
                 <i class="bi bi-arrow-left fs-3"></i>

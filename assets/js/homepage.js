@@ -9,22 +9,28 @@ let audio = null;
 let timer = null;
 const playButton = document.getElementById("playButton");
 const playCenter = document.getElementById("playCenter");
+const playButtonMobile = document.getElementById("play-button");
+const volumeSlider = document.getElementById("volumeSlider");
 
 playButton.addEventListener("click", function () {
   if (audio && !audio.paused) {
     audio.pause();
     this.innerHTML = `<span class="px-2 text-white text-nowrap small">play</span>`;
     playCenter.src = "./assets/imgs/icons/play_musicbar.png";
+    playButtonMobile.innerHTML = `<i class="text-black bi bi-play-fill fs-6" ></i>`;
+    clearInterval(timer);
     // console.log('Audio paused');
   } else {
     const audioUrl = this.getAttribute("data-previewSong");
     if (!audio) {
       audio = new Audio(audioUrl);
+      audio.volume = volumeSlider.value / 100
     }
     audio.play();
     startTimer();
     this.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`;
     playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
+    playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
     // console.log('Playing audio:', audioUrl);
   }
 });
@@ -34,21 +40,55 @@ playCenter.addEventListener("click", function () {
     audio.pause();
     playButton.innerHTML = `<span class="px-2 text-white text-nowrap small">play</span>`;
     playCenter.src = "./assets/imgs/icons/play_musicbar.png";
+    playButtonMobile.innerHTML = `<i class="text-black bi bi-play-fill fs-6" ></i>`;
+    clearInterval(timer);
   } else {
     const audioUrl = this.getAttribute("data-previewSong");
-    if (!audio) {
-      audio = new Audio(audioUrl);
+
+    if(!audioUrl){
+      alert('nessuna canzone selezionata');
+      return;
     }
+    if (!audio)
+      audio = new Audio(audioUrl);
+  
     audio.play();
     startTimer();
     playButton.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`;
     playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
+    playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
+    // console.log('Playing audio:', audioUrl);
+  }
+});
+
+playButtonMobile.addEventListener("click", function () {
+  if (audio && !audio.paused) {
+    audio.pause();
+    playButton.innerHTML = `<span class="px-2 text-white text-nowrap small">play</span>`;
+    playCenter.src = "./assets/imgs/icons/play_musicbar.png";
+    playButtonMobile.innerHTML = `<i class="text-black bi bi-play-fill fs-6" ></i>`;
+    clearInterval(timer);
+  } else {
+    const audioUrl = this.getAttribute("data-previewSong");
+
+    if(!audioUrl){
+      alert('nessuna canzone selezionata');
+      return;
+    }
+    if (!audio)
+      audio = new Audio(audioUrl);
+
+    audio.play();
+    startTimer();
+    playButton.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`;
+    playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
+    playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
     // console.log('Playing audio:', audioUrl);
   }
 });
 
 // prendo id del imput del volume e creo la funzione
-document.getElementById("volumeSlider").addEventListener("input", function () {
+volumeSlider.addEventListener("input", function () {
   if (audio) {
     audio.volume = this.value / 100;
     // console.log(this.value);
@@ -89,18 +129,3 @@ function updateTimeDisplays() {
   }
 }
 
- function formatTime(seconds) {
-   const minutes = Math.floor(seconds / 60);
-   const remainingSeconds = Math.floor(seconds % 60)
-   // Aggiungi uno zero davanti ai secondi se è un singolo numero
-   const formattedSeconds =
-     remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
-   return minutes + ":" + formattedSeconds;
- }
-
- 
-// function formatTime(seconds) {
-//   const minutes = Math.floor(seconds / 60);
-//   const seconds = Math.floor(seconds % 60);
-//   return `${minutes}:${seconds < 10 ? "0" : ""} ${seconds}`;
-// }

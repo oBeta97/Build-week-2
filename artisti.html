@@ -52,12 +52,18 @@
             </div>
 
             <ul class="navbar-nav flex-row flex-md-column justify-content-around w-100 gap-2">
-              <li class="nav-item fw-bold d-flex flex-column flex-md-row align-items-center gap-3">
-                <i class="bi bi-house-door-fill"></i>Home
-              </li>
-              <li class="nav-item d-flex flex-column flex-md-row align-items-center gap-3 fw-lighter">
-                <i class="bi bi-search"></i>Cerca
-              </li>
+              <li class="nav-item ">
+                <a href="./index.html" class="text-decoration-none text-light d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
+                    <i class="bi bi-house-door-fill fs-4"></i>
+                    Home
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="./search.html" class="text-decoration-none text-light fw-bold d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
+                    <i class="bi bi-search fs-5"></i>
+                    Cerca
+                </a>
+            </li>
               <li class="nav-item d-flex flex-column flex-md-row align-items-center gap-3 fw-lighter">
                 <i class="bi bi-collection"></i>La tua Libreria
               </li>
@@ -84,108 +90,13 @@
 
       <!--hero section-->
       <div class="col-12 col-md-7 order-1 order-md-2 hero-section px-0" id="mainContent">
-        <div class="row px-4 m-0 d-flex align-items-end pb-3" id="bannerArtist">
-          <div id="..." class="col">
-            <small class="fw-bold"><i class="bi bi-patch-check-fill text-primary me-1"></i>Artista
-              verificato</small>
-            <h1 id="artistName" class="fw-bold display-3">
-              Pinguini Tattici Nucleari
-            </h1>
 
+        <div class="vh-100 w-100 d-flex justify-content-center align-items-center">
+          <div class="spinner-border text-success d-flex justify-content-center align-items-center" role="status">
+            <span class="sr-only"></span>
           </div>
         </div>
 
-        <div class="h-100 px-4" id="artistRow">
-          <div class="row">
-            <div class="d-flex">
-              <small class="ps-1">3.961.093 ascoltatori mensili</small>
-            </div>
-            <div class="col-12 d-flex align-items-center mb-4">
-              <button type="button" class="btn btn-outline-none">
-                Seguiti
-              </button>
-              <i class="bi bi-three-dots-vertical ms-3"></i>
-              <i class="bi mx-2 bi-shuffle text-success ms-auto"></i>
-              <button class="btn btn-success rounded-circle">
-                <i class="text-black bi bi-play-fill"></i>
-              </button>
-            </div>
-
-            <h5 class="fw-bold">Popolari</h5>
-
-            <!--card artisti creata dinamicamente con js-->
-            <div class="row d-flex align-items-center mb-2">
-              <div class="col-1 text-end">
-                <small id="trackNumber">1</small>
-              </div>
-              <div class="col-2">
-                <a href="#">
-                  <img class="top3Images rounded-1" src="assets/imgs/main/image-12.jpg" />
-                </a>
-              </div>
-              <div class="col-6">
-                <a href="#"><small id="trackTitle">Ricordi</small></a>
-                <div class="d-block d-md-none">
-                  <a href="#"><small id="trackReprod">10.679.376</small></a>
-                </div>
-              </div>
-              <div class="col-2 text-end d-none d-md-block">
-                <a href="#"><small id="trackReprod">10.679.376</small></a>
-              </div>
-              <div class="col-1 ms-auto">
-                <i class="bi bi-three-dots-vertical"></i>
-              </div>
-            </div>
-
-            <div class="row d-flex align-items-center mb-2">
-              <div class="col-1 text-end">
-                <small id="trackNumber">2</small>
-              </div>
-              <div class="col-2">
-                <a href="#">
-                  <img class="top3Images rounded-1" src="assets/imgs/main/image-12.jpg" />
-                </a>
-              </div>
-              <div class="col-6">
-                <a href="#"><small id="trackTitle">Ricordi</small></a>
-                <div class="d-block d-md-none">
-                  <a href="#"><small id="trackReprod">10.679.376</small></a>
-                </div>
-              </div>
-              <div class="col-2 text-end d-none d-md-block">
-                <a href="#"><small id="trackReprod">10.679.376</small></a>
-              </div>
-              <div class="col-1 ms-auto">
-                <i class="bi bi-three-dots-vertical"></i>
-              </div>
-            </div>
-
-            <div class="row d-flex align-items-center mb-2">
-              <div class="col-1 text-end">
-                <small id="trackNumber">3</small>
-              </div>
-              <div class="col-2">
-                <a href="#">
-                  <img class="top3Images rounded-1" src="assets/imgs/main/image-12.jpg" />
-                </a>
-              </div>
-              <div class="col-6">
-                <a href="#"><small id="trackTitle">Ricordi</small></a>
-                <div class="d-block d-md-none">
-                  <a href="#"><small id="trackReprod">10.679.376</small></a>
-                </div>
-              </div>
-              <div class="col-2 text-end d-none d-md-block">
-                <a href="#"><small id="trackReprod">10.679.376</small></a>
-              </div>
-              <div class="col-1 ms-auto">
-                <i class="bi bi-three-dots-vertical"></i>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
       </div>
 
       <!--amici section-->
