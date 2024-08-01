@@ -38,7 +38,7 @@ async function getArtistId (artistId) {
           <div class="row">
             <div class="d-flex">
               <small class="ps-1">${
-                newArtistId.nb_fan
+                newArtistId.nb_fan.toLocaleString()
                 } Ascoltatori mensili</small>
             </div>
             <div class="col-12 d-flex align-items-center mb-4">
@@ -78,11 +78,11 @@ async function getTracklist (url) {
               <div class="col-6">
                 <small id="trackTitle">${tracklist.data[i].title}</small></a>
                 <div class="d-block d-md-none">
-                  <a href="#"><small id="trackReprod">${tracklist.data[i].rank}</small></a>
+                  <a href="#"><small id="trackReprod">${tracklist.data[i].rank.toLocaleString()}</small></a>
                 </div>
               </div>
               <div class="col-2 text-end d-none d-md-block">
-                <small id="trackReprod">${tracklist.data[i].rank}</small>
+                <small id="trackReprod">${tracklist.data[i].rank.toLocaleString()}</small>
               </div>
               <div class="col-1 ms-auto">
                 <i class="bi bi-three-dots-vertical"></i>
