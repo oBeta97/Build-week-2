@@ -93,18 +93,18 @@ async function search(searchString) {
 
             console.log(this.dataset);
 
-            // switch(this.dataset.type){
-            //     case 'album':
-            //         window.location.replace(`./album.html?albumId=${this.dataset.id}`);
-            //         break;
+            switch(this.dataset.type){
+                case 'album':
+                    window.location.replace(`./album.html?albumId=${this.dataset.id}`);
+                    break;
 
-            //     case 'artist':
-            //         window.location.replace(`./artisti.html?artistId=${this.dataset.id}`);
-            //         break;
+                case 'artist':
+                    window.location.replace(`./artisti.html?artistId=${this.dataset.id}`);
+                    break;
 
-            //     default:
-            //         throw new Error('Unknown item type');
-            // }         
+                default:
+                    throw new Error('Unknown item type');
+            }         
         });
     });
 
