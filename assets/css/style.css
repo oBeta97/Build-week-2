@@ -68,6 +68,12 @@ body {
     
   }
 }
+@media (max-width: 768px) {
+  .bg-md-gray{
+    background: #000;
+  }
+  
+}
 
 .search-card-img-container img {
   transform: scale(1.8) rotate(25deg);
@@ -206,3 +212,4 @@ main {
 #tracklist .row:hover #trackNumber{
   display: none;
 }
+

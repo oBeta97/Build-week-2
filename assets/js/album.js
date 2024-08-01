@@ -58,7 +58,7 @@ async function createPage(albumId) {
     }
     mainContent.innerHTML = `
     <div class="row">
-          <div class="col-12 d-flex flex-column justify-content-center align-items-center ">
+          <div class="col-12 d-flex flex-column justify-content-center align-items-center">
 
             <div class="row hero-section w-100">
 
@@ -73,7 +73,7 @@ async function createPage(albumId) {
                 <div class="card-body d-flex flex-column justify-content-md-end">
                   <p class="small d-none d-md-block m-0">Album</p>
                   <h2 class="card-title fw-bold">${album.title}</h2>
-                  <div class="row align-items-center">
+                  <div class="row align-items-center ">
                     <div class="col-1 p-0" id="64932">
                       <img src=${album.artist.picture_medium} class="img-fluid rounded-circle" alt="">
                     </div>
@@ -101,7 +101,7 @@ async function createPage(albumId) {
               </div>
             </div>
 
-             <div class="row d-flex align-items-center justify-content-between py-4 bg-black" id="songs">
+             <div class="row d-flex align-items-center justify-content-between py-4 bg-black px-3" id="songs">
 
              ${songs}
 
