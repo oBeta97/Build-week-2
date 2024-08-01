@@ -105,6 +105,7 @@ async function search(searchString) {
                 default:
                     throw new Error('Unknown item type');
             }         
+
         });
     });
 

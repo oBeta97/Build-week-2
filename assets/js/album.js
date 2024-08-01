@@ -22,12 +22,18 @@ window.addEventListener("load", function (event) {
 async function createPage(albumId) {
 
     const album = await getAlbum(albumId);
-    console.log(album)
+  
+
+    if (!album || album.error || !album.tracks || !album.tracks.data) {
+      throw new Error(album.error ? album.error.message : 'Nessun dato disponibile per questo album.');
+  }
 
     let songs = '';
 
     for (let i = 0; i < album.tracks.data.length; i++) {
         const duration = formatTime(album.tracks.data[i].duration)
+        const rankFormatted = album.tracks.data[i].rank.toLocaleString();
+      
         songs += `
      <div class="col-1 d-none d-md-block" id="6628424">
                 <p class="text-secondary text-center">
@@ -39,7 +45,7 @@ async function createPage(albumId) {
                   <p class="text-secondary">${album.artist.name}</p>
               </div>
               <div class="col-2 d-none d-md-block">
-                <p>${album.tracks.data[i].rank}</p>
+                <p>${rankFormatted}</p>
               </div>
               <div class="col-1 fs-3 d-block d-md-none">
                 <i class="bi bi-three-dots-vertical"></i>
