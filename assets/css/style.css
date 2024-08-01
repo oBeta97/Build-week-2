@@ -25,6 +25,10 @@ body {
   font-size: 1.2em;
 }
 
+.cardw {
+  background-color: #000;
+}
+
 .sfondo {
   background-image: linear-gradient(to right top, #0f0e0f, #100f10, #111111, #121212, #131313, #181818, #1c1c1c, #212121, #2b2b2b, #353636, #404141, #4b4c4c);
 }
