@@ -1,5 +1,10 @@
 * {
-  font-family: CircularStd, sans-serif;
+  font-family: Gotham, sans-serif; 
+
+}
+
+body {
+  background-color: #000;
 }
 
 #card-body {
@@ -20,8 +25,12 @@
   font-size: 1.2em;
 }
 
+.cardw {
+  background-color: #000;
+}
+
 .sfondo {
-  background-color: #1D1D1D;
+  background-image: linear-gradient(to right top, #0f0e0f, #100f10, #111111, #121212, #131313, #181818, #1c1c1c, #212121, #2b2b2b, #353636, #404141, #4b4c4c);
 }
 
 .btn-a {
@@ -31,11 +40,7 @@
 }
 
 .small {
-  font-size: 0.8rem;
-}
-
-.big {
-  font-size: 6rem;
+  font-size: 0.6rem;
 }
 
 .card-container {
@@ -43,18 +48,24 @@
 }
 
 .bg-cards {
-  background-color: #1D1D1D;
   border-radius: 10px;
+  background-color: #262626;
+  color: white;
+  box-shadow: 8px 6px 27px -2px #000000;
 }
 
 .bg-cards1 {
-  border-radius: 30px;
+  background-color: #565252;
+  box-shadow: 8px 6px 27px -2px #000000;
 }
+
+
 
 @media (min-width: 768px) {
   .bg-md-gray {
-    background-color: #1D1D1D;
+    background-color: #565252;
     padding: 0;
+    
   }
 }
 
@@ -173,19 +184,9 @@
 }
 
 .hero-section {
-  background: linear-gradient(0deg, rgba(6, 2, 0, 1) 0%, rgba(25, 135, 84, 1) 100%);
+  background: linear-gradient(0deg, rgba(6, 2, 0, 1) 0%, #e9ecef 100%);
 }
 
-
-.start-button.row-button {
-  display: none;
-  transition: display 0.3s;
-}
-
-#tracklist .row:hover .start-button{
-  display: block;
-}
-
-#tracklist .row:hover #trackNumber{
-  display: none;
+main {
+  background-image: linear-gradient(to top, #000000, #090809, #111010, #161515, #1b1a1a, #171717, #252424, #2a2929, #272727, #232222, #292929, #2b2a2a)
 }
