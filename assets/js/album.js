@@ -43,7 +43,7 @@ async function createPage(albumId) {
     <div class="row">
           <div class="col-12 d-flex flex-column justify-content-center align-items-center ">
 
-            <div class="row hero-section">
+            <div class="row hero-section w-100">
 
               <div class="position-sticky top-0 left-0">
                 <i class="bi bi-arrow-left fs-3"></i>
