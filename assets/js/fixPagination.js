@@ -11,6 +11,4 @@ window.addEventListener("load", function(event){
     }
 
 
-    getArtist(412);
-
 });
