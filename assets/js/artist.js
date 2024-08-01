@@ -1,4 +1,6 @@
 const mainContent = document.getElementById('mainContent')
+const playCenter = document.getElementById("playCenter");
+const playButtonMobile = document.getElementById("play-button");
 window.addEventListener("load", function (event) {
     const artistId = new URLSearchParams(location.search).get('artistId');
     console.log('artisti', artistId);
@@ -46,8 +48,10 @@ async function getArtistId (artistId) {
                 Seguiti
               </button>
               <i class="bi bi-three-dots-vertical ms-3"></i>
-              <i class="bi mx-2 bi-shuffle text-success ms-auto"></i>
-              <button class="btn btn-success rounded-circle">
+              <button class="btn">
+                <i class="bi mx-2 bi-shuffle text-success ms-auto start-button" data-song=""></i>
+              </button>
+              <button class="btn btn-success rounded-circle start-button hero-start-button" data-song="">
                 <i class="text-black bi bi-play-fill"></i>
               </button>
             </div>
@@ -66,11 +70,27 @@ async function getTracklist (url) {
     const tracklist = await getGenericFetch(url)
     console.log('traccia', tracklist)
     const tracklistDiv = document.getElementById('tracklist')
+
+    document.querySelector('.start-button.hero-start-button').setAttribute('data-song', tracklist.data[0].preview);
+    document.querySelector('.bi-shuffle.start-button').
+      setAttribute(
+        'data-song', 
+        tracklist.data[
+          RandomNumberGenerator(0, tracklist.data.length -1)
+        ].preview
+      )
+    ;
+
     for (let i=0; i<tracklist.data.length ;i++) {
         tracklistDiv.innerHTML += `
         <div class="row d-flex align-items-center mb-2">
               <div class="col-1 text-center">
-                <small id="trackNumber">${i+1}</small>
+                <small id="trackNumber">
+                  ${i+1}
+                </small>
+                <button class="btn btn-success rounded-circle start-button row-button" data-song="${tracklist.data[i].preview}">
+                  <i class="text-black bi bi-play-fill"></i>
+                </button>
               </div>
               <div class="col-2">
                   <img class="top3Images rounded-1" src="${tracklist.data[i].album.cover}" />
@@ -88,9 +108,26 @@ async function getTracklist (url) {
                 <i class="bi bi-three-dots-vertical"></i>
               </div>
             </div>`
-
-
     }
+
+    const playButtons = document.querySelectorAll('.start-button');
+
+    playButtons.forEach(element => {
+      element.addEventListener('click', function(e){
+        console.log(this.dataset.song);
+        TogglePlayer(this.dataset.song, this);
+      })
+    });
+
+    playCenter.addEventListener('click',function(event){
+      TogglePlayer(this.dataset.song, this);
+    });
+
+    playButtonMobile.addEventListener('click',function(event){
+      TogglePlayer(this.dataset.song, this);
+    });
+
+
 }
 
 

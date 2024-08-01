@@ -45,13 +45,13 @@ playCenter.addEventListener("click", function () {
   } else {
     const audioUrl = this.getAttribute("data-previewSong");
 
-    if(!audioUrl){
+    if (!audioUrl) {
       alert('nessuna canzone selezionata');
       return;
     }
     if (!audio)
       audio = new Audio(audioUrl);
-  
+
     audio.play();
     startTimer();
     playButton.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`;
@@ -71,7 +71,7 @@ playButtonMobile.addEventListener("click", function () {
   } else {
     const audioUrl = this.getAttribute("data-previewSong");
 
-    if(!audioUrl){
+    if (!audioUrl) {
       alert('nessuna canzone selezionata');
       return;
     }

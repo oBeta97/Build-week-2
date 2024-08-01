@@ -7,3 +7,4 @@ function formatTime(seconds) {
     return minutes + ":" + formattedSeconds;
   }
  
+const RandomNumberGenerator = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
