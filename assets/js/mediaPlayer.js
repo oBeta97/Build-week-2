@@ -35,7 +35,11 @@ function TogglePlayer(audioUrl, target) {
         startTimer();
         target.innerHTML = `<i class="bi bi-pause-fill"></i>`;
         playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
+        playCenter.setAttribute('data-song', audioUrl);
+
         playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
+        playButtonMobile.setAttribute('data-song', audioUrl);
+        
         // console.log('Playing audio:', audioUrl);
     }
 
