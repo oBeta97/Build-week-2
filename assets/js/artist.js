@@ -8,9 +8,10 @@ window.addEventListener("load", function (event) {
 async function getArtistId (artistId) {
     const newArtistId = await getArtist(artistId)
     console.log('artisti', newArtistId)
+
     const mainContent = document.getElementById('mainContent')
     mainContent.innerHTML = ` 
-        <div class="row px-4 m-0 d-flex align-items-end pb-3" id="bannerArtist">
+        <div class="row px-4 m-0 d-flex align-items-end pb-3" id="bannerArtist" style = 'background-image:url(${newArtistId.picture_xl});background-size: cover;background-repeat:no-repeat;'>
           <div id="..." class="col">
             <small class="fw-bold"><i class="bi bi-patch-check-fill text-primary me-1"></i>Artista
               verificato</small>
