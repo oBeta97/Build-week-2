@@ -1,8 +1,20 @@
+const mainContent = document.getElementById('mainContent')
 
 
 window.addEventListener("load", function (event) {
 
     const eventUpdate = new URLSearchParams(location.search).get('albumId')
+
+    if(!eventUpdate){
+      mainContent.innerHTML = `
+        <div class="vh-100 w-100 d-flex justify-content-center align-items-center">
+          <h2> 404 Not Found</h2>
+        </div>
+      `;
+      return;
+    }
+    
+
     createPage(eventUpdate)
 
 })
@@ -18,7 +30,7 @@ async function createPage(albumId) {
         const duration = formatTime(album.tracks.data[i].duration)
         songs += `
      <div class="col-1 d-none d-md-block" id="6628424">
-                <p class="text-secondary">
+                <p class="text-secondary text-center">
                   ${i + 1}
                 </p>
               </div>
@@ -38,7 +50,6 @@ async function createPage(albumId) {
               </div>
     `;
     }
-    const mainContent = document.getElementById('mainContent')
     mainContent.innerHTML = `
     <div class="row">
           <div class="col-12 d-flex flex-column justify-content-center align-items-center ">
