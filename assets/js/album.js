@@ -10,7 +10,11 @@ window.addEventListener("load", function (event) {
 async function createPage(albumId) {
 
     const album = await getAlbum(albumId);
-    console.log(album)
+  
+
+    if (!album || album.error || !album.tracks || !album.tracks.data) {
+      throw new Error(album.error ? album.error.message : 'Nessun dato disponibile per questo album.');
+  }
 
     function convertSecondsToMinutes(seconds) {
         const minutes = Math.floor(seconds / 60);
