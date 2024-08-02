@@ -16,12 +16,12 @@
   <div class="container-fluid vh-100">
     <div class="row row-col-3 flex-column flex-md-row vh-100">
       <div class="col-12 col-md-3 order-2 order-md-1 fixed-bottom sticky-md-top p-0" id="nav-list ">
-        <!-- navbar -->
-        <div class="container-md p-0 p-md-2">
-          <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4">
+        <!-- navbar --> 
+        <div class="container-md p-0 p-md-2 ">
+          <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4 nav-opacity">
             <i class="bi bi-three-dots d-none d-md-block"></i>
 
-            <div class="d-block d-md-none bg-body-tertiary rounded-3 w-100">
+            <div class="d-block d-md-none bg-dark rounded-3 w-100 ">
               <div class="row d-flex justify-content-between text-center align-items-center">
                 <!-- Album Cover Section -->
                 <div class="col-2">
@@ -50,7 +50,7 @@
               </div>
             </div>
 
-            <ul class="navbar-nav flex-row flex-md-column justify-content-around w-100 gap-2">
+            <ul class="navbar-nav flex-row flex-md-column justify-content-around w-100 gap-2 ">
               <li class="nav-item ">
                 <a href="javascript:void(0);" class="text-decoration-none fw-bold text-light d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
                     <i class="bi bi-house-door-fill fs-4"></i>
@@ -67,7 +67,7 @@
                 <i class="bi bi-collection"></i>La tua Libreria
               </li>
             </ul>
-            <ul class="navbar-nav d-none d-md-flex flex-row flex-md-column justify-content-around w-100 gap-2">
+            <ul class="navbar-nav d-none d-md-flex flex-row flex-md-column justify-content-around w-100 gap-2 ">
               <li class="nav-item d-flex gap-3">
                 <i class="bi bi-plus-lg"></i>Crea Playlist
               </li>
@@ -143,9 +143,9 @@
           </div>
         </div>
         <div
-          class="container p-0 p-md-2 d-flex justify-content-between mt-3 px-4 d-md-none d-sm-flex align-items-center mx-0">
+          class="container p-0 p-md-2 d-flex justify-content-between mt-3 px-4 d-md-none d-sm-flex align-items-center mx-0 text-light ">
           <div>
-            <h2>Buonasera</h2>
+            <h2 class="fw-bold">Buonasera</h2>
           </div>
           <div>
             <ul class="navbar-nav d-flex flex-row gap-4">
@@ -156,7 +156,7 @@
           </div>
         </div>
         <div
-          class="container p-0 p-md-2 d-flex justify-content-start mt-3 px-4 d-md-none d-sm-flex align-items-center gap-5 mx-0">
+          class="container p-0 p-md-2 d-flex justify-content-start mt-3 px-4 d-md-none d-sm-flex align-items-center gap-5 mx-0 text-light fw-bold">
           <p>Musica</p>
           <p>Podcast e show</p>
         </div>
@@ -287,7 +287,7 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid px-4 d-md-none">
+        <div class="container-fluid px-4 d-md-none text-light">
           <div class="sfondo rounded-4">
             <div class="col-sm-12 col-md-12 d-flex flex-row mb-2 p-4 mt-3">
               <div class="row flex-grow-1">
@@ -316,7 +316,7 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid px-4 d-md-none">
+        <div class="container-fluid px-4 d-md-none text-light">
           <div class="sfondo rounded-4">
             <div class="col-sm-12 col-md-12 d-flex flex-row mb-2 p-4 mt-3">
               <div class="row flex-grow-1">
@@ -414,7 +414,7 @@
             <img style="height: 1rem; margin-right: 1rem; opacity: 0.8" src="./assets/imgs/icons/next_musicbar.png" />
             <img style="height: 1rem; margin-right: 1rem; opacity: 0.8" src="./assets/imgs/icons/loop.png" />
           </div>
-          <div class="player-timeline">
+          <div class="player-timeline text-light">
             <span class="current-time" id="currentTime">0:00</span>
             <input type="range" id="timelineSlider" class="timeline-slider rounded-pill" min="0" max="100" step="1"
               value="0" />

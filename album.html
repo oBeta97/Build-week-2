@@ -13,14 +13,14 @@
 </head>
 
 <body data-bs-theme="dark" class="vh-100">
-  <div class="container-fluid vh-100">
+  <div class="container-fluid vh-100 p-0">
 
 
     <div class="row row-col-3 flex-column flex-md-row vh-100">
       <div class="col-12 col-md-3 order-2 order-md-1 fixed-bottom sticky-md-top p-0" id="nav-list">
         <!-- navbar -->
         <div class="container-md p-0 p-md-2">
-          <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4">
+          <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4 nav-opacity">
             <i class="bi bi-three-dots d-none d-md-block"></i>
 
             <div class="d-block d-md-none bg-body-tertiary rounded-3 w-100">
@@ -31,13 +31,17 @@
                 </div>
 
                 <!-- Music Title or Information Section -->
-                <div class="d-flex col-7 text-secondary align-items-center fs-5 my-1 text-light">
-                  <span class="music-title"></span>
-                  <span class="ms-2" id="artistName"></span>
+                <div class="d-flex col-6 text-light align-items-center fs-5 my-1">
+                  <span id="musicTitle">Song Title</span>
+                  <span class="ms-2">by
+                    <span id="artistNameMediaPlayer">
+                      Artist Name
+                    </span>
+                  </span>
                 </div>
 
                 <!-- Media Player Controls Section -->
-                <div class="d-flex col-3 text-secondary align-items-center justify-content-evenly fs-5 text-light">
+                <div class="d-flex col-3 text-secondary align-items-center justify-content-end fs-5 text-light">
                   <i class="bi bi-music-player me-2"></i>
                   <i class="bi bi-heart fs-6 me-2"></i>
                   <button class="btn btn-success btn-sm rounded-circle" id="play-button">
