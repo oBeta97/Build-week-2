@@ -1,9 +1,12 @@
 let audio = null;
 let timer = null;
 const volumeSlider = document.getElementById("volumeSlider");
-const albumImageMediaPlayer = document.getElementById('albumImageMediaPlayer');
+const mediaPlayerImgs = document.querySelectorAll('.media-player-img');
+const musicTitle = document.querySelectorAll('.music-title');
+
 
 function TogglePlayer(audioUrl, target) {
+    const pauseButtons = document.querySelectorAll('.bi.bi-pause-fill')
 
     if(!audio && !audioUrl){
         alert('Seleziona una canzone')
@@ -13,11 +16,23 @@ function TogglePlayer(audioUrl, target) {
 
     if (audio && !audio.paused && audio.currentSrc === audioUrl) {
         audio.pause();
-        target.innerHTML = `<i class="text-black bi bi-play-fill fs-6" ></i>`;
+
+        
+        if(playButtonMobile === target){
+            pauseButtons.forEach(element => {
+                element.parentElement.innerHTML = '<i class="text-black bi bi-play-fill fs-6" ></i>';
+            });
+        }
+        
+        if(!target.classList.contains('bi-shuffle'))
+            target.innerHTML = `<i class="text-black bi bi-play-fill fs-6" ></i>`;
+        
         playCenter.src = "./assets/imgs/icons/play_musicbar.png";
         playButtonMobile.innerHTML = `<i class="text-black bi bi-play-fill fs-6" ></i>`;
+
         clearInterval(timer);
         // console.log('Audio paused');
+
     } else {
 
         if (!audio) {
@@ -30,20 +45,38 @@ function TogglePlayer(audioUrl, target) {
             audio.pause();
             audio = new Audio(audioUrl);
             audio.volume = volumeSlider.value / 100
+            pauseButtons.forEach(element => {
+                element.parentElement.innerHTML = '<i class="text-black bi bi-play-fill fs-6" ></i>';
+            });
         }
+
+
+        mediaPlayerImgs.forEach(element => {
+            element.src = target.dataset.songimg;
+        });
+
+        musicTitle.forEach(element => {
+            element.innerText = target.dataset.songname;
+        });
 
         audio.play();
         startTimer();
-        target.innerHTML = `<i class="bi bi-pause-fill"></i>`;
-        playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
-        playCenter.setAttribute('data-song', audioUrl);
-
-        playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
-        playButtonMobile.setAttribute('data-song', audioUrl);
+        if(!target.classList.contains('bi-shuffle'))
+            target.innerHTML = `<i class="bi bi-pause-fill"></i>`;
         
-        // albumImageMediaPlayer.src = 
+        playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
+        playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
+        
 
-        // console.log('Playing audio:', audioUrl);
+
+        playCenter.setAttribute('data-song', audioUrl);
+        playCenter.setAttribute('data-songImg', target.dataset.songimg);
+        playCenter.setAttribute('data-songName', target.dataset.songname);
+        
+        playButtonMobile.setAttribute('data-song', audioUrl);
+        playButtonMobile.setAttribute('data-songImg', target.dataset.songimg);
+        playButtonMobile.setAttribute('data-songName', target.dataset.songname);
+
     }
 
 }

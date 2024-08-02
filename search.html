@@ -23,51 +23,17 @@
                     <nav class="navbar text-light d-flex flex-column align-items-start p-0 gap-4">
                         <i class="bi bi-three-dots d-none d-md-block"></i>
 
-
-
-                        <div class="d-block d-md-none bg-body-tertiary rounded-3 w-100">
-                            <div class="row d-flex justify-content-between text-center align-items-center">
-                                <!-- Album Cover Section -->
-                                <div class="col-3">
-                                    <img src="assets/imgs/main/image-12.jpg" class="img-fluid rounded-start"
-                                        alt="Album Cover" />
-                                </div>
-
-                                <!-- Music Title or Information Section -->
-                                <div class="d-flex col-6 text-secondary align-items-center fs-5 my-1 text-light">
-                                    <span id="music-title">Song Title</span>
-                                    <span class="ms-2">by Artist Name</span>
-                                </div>
-
-                                <!-- Media Player Controls Section -->
-                                <div class="d-flex col-3 text-secondary align-items-center justify-content-end fs-5 text-light">
-                                    <i class="bi bi-music-player me-2"></i>
-                                    <i class="bi bi-heart fs-6 me-2"></i>
-                                    <button class="btn btn-success btn-sm rounded-circle">
-                                        <i class="text-black bi bi-play-fill fs-6" id="play-button"></i>
-                                    </button>
-                                    <!-- Placeholder for play progress bar -->
-                                    <div class="playBar mt-1 ms-2" style="width: 60px">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%"
-                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
                         <ul class="navbar-nav flex-row flex-md-column justify-content-around w-100 gap-2">
                             <li class="nav-item ">
-                                <a href="./index.html" class="text-decoration-none text-light d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
+                                <a href="./index.html"
+                                    class="text-decoration-none text-light d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
                                     <i class="bi bi-house-door-fill fs-4"></i>
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="javascript:void(0);" class="text-decoration-none text-light fw-bold d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
+                                <a href="javascript:void(0);"
+                                    class="text-decoration-none text-light fw-bold d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
                                     <i class="bi bi-search fs-5"></i>
                                     Cerca
                                 </a>
@@ -92,9 +58,8 @@
 
                         <hr class="border-bottom border-2 w-100 d-none d-md-block" />
 
-                        <ul class="navbar-nav d-none d-md-block">
-                            <li class="nav-item">ciao</li>
-                            <li class="nav-item">ciao</li>
+                        <ul class="navbar-nav d-none d-md-block" id="album">
+
                         </ul>
 
                     </nav>
@@ -105,7 +70,7 @@
 
 
             <!-- MAIN -->
-            <div class="col-12 col-md-8 order-1 order-md-2 h-100">
+            <div class="col-12 col-md-8 order-1 order-md-2 h-100 p-0">
 
                 <main class="container-md pt-4" id="mainContent">
 
@@ -437,42 +402,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card border-0 py-2 cardw">
+                        <div class="row g-0">
+                            <div class="col-md-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle"
+                                    alt="cover" />
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0" id="card-body">
+                                    <p class="card-title fw-bold">Alessandro Varchetta</p>
+                                    <p class="card-text"><small>Kakapo song</small></p>
+                                    <p class="card-text">
+                                        <small class="text-body-secondary"><i class="bi bi-music-note-beamed"></i>
+                                            Kakapo</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </aside>
             </div>
 
         </div>
         <div class="fixed-bottom d-none d-md-block">
-            <div class="player bg-dark" id="desktopMusicPlayer">
-                <div class="volume-controls"></div>
-                <div class="player-center">
-                    <div class="player-controls">
-                        <img style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                            src="./assets/imgs/icons/shuffle.png" />
-                        <img style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                            src="./assets/imgs/icons/previous_musicbar.png" />
-                        <img style="height: 2rem; margin-right: 1rem" src="./assets/imgs/icons/play_musicbar.png" />
-                        <img style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                            src="./assets/imgs/icons/next_musicbar.png" />
-                        <img style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                            src="./assets/imgs/icons/loop.png" />
-                    </div>
-                    <div class="player-timeline">
-                        <span class="current-time">0:00</span>
-                        <input type="range" class="timeline-slider rounded-pill" min="0" max="100" step="1" value="0" />
-                        <span class="total-time">0:00</span>
-                    </div>
-                </div>
-
-                <div class="volume-controls d-none d-md-flex">
-                    <img src="./assets/imgs/icons/device.png" style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                        alt="Volume" />
-                    <img src="./assets/imgs/icons/playlist.png" style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                        alt="Settings" />
-                    <img src="./assets/imgs/icons/music.png" style="height: 1rem; margin-right: 1rem; opacity: 0.8"
-                        alt="Fullscreen" />
-                    <input type="range" class="volume-slider rounded-pill" min="0" max="100" step="1" value="50" />
-                </div>
-            </div>
+            <div class="d-none player bg-dark" id="desktopMusicPlayer"></div>
         </div>
     </div>
 
@@ -483,6 +436,7 @@
     <script src="./assets/js/fixPagination.js"></script>
     <script src="./assets/js/fetches.js"></script>
     <script src="./assets/js/search.js"></script>
+    <script src="assets/js/playlist.js"></script>
 </body>
 
 </html>

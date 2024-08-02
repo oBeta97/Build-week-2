@@ -43,9 +43,6 @@ body {
   padding: 0;
 }
 
-.small {
-  font-size: 0.6rem;
-}
 
 .card-container {
   margin: 0 -15px;
@@ -204,9 +201,6 @@ body {
 main {
   background-image: linear-gradient(to top, #000000, #090809, #111010, #161515, #1b1a1a, #171717, #252424, #2a2929, #272727, #232222, #292929, #2b2a2a)
 }
-
-
-
 
 .start-button.row-button {
   display: none;
