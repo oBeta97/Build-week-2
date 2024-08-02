@@ -207,12 +207,15 @@ main {
   transition: display 0.3s;
 }
 
-#tracklist .row:hover .start-button{
-  display: block;
-}
-
-#tracklist .row:hover #trackNumber{
-  display: none;
+@media screen and (min-width: 768px) {
+  #tracklist .row:hover .start-button{
+    display: block;
+  }
+  
+  #tracklist .row:hover #trackNumber{
+    display: none;
+  }
+  
 }
 
 

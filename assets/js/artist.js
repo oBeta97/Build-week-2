@@ -102,7 +102,7 @@ async function getTracklist (url) {
               <div class="col-2">
                   <img class="top3Images rounded-1" src="${tracklist.data[i].album.cover}" />
               </div>
-              <div class="col-6">
+              <div class="col-5">
                 <small id="trackTitle">${tracklist.data[i].title}</small></a>
                 <div class="d-block d-md-none">
                   <small class="small" id="trackReprod">${tracklist.data[i].rank.toLocaleString()}</small>
@@ -111,7 +111,14 @@ async function getTracklist (url) {
               <div class="col-2 text-end d-none d-md-block">
                 <small id="trackReprod">${tracklist.data[i].rank.toLocaleString()}</small>
               </div>
-              <div class="col-1 ms-auto">
+              <div class="col-2 ms-auto d-flex align-items-center">
+                  <button class="btn d-block d-md-none btn-success rounded-circle start-button row-button"
+                    data-song="${tracklist.data[i].preview}"
+                    data-songName="${tracklist.data[i].title_short}"
+                    data-songImg="${tracklist.data[i].album.cover_small}"
+                  >
+                  <i class="text-black bi bi-play-fill"></i>
+                </button>
                 <i class="bi bi-three-dots-vertical"></i>
               </div>
             </div>`
