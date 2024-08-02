@@ -12,7 +12,6 @@ const playCenter = document.getElementById("playCenter");
 const playButtonMobile = document.getElementById("play-button");
 const volumeSlider = document.getElementById("volumeSlider");
 
-
 playButton.addEventListener("click", function () {
   if (audio && !audio.paused) {
     audio.pause();
@@ -25,7 +24,7 @@ playButton.addEventListener("click", function () {
     const audioUrl = this.getAttribute("data-previewSong");
     if (!audio) {
       audio = new Audio(audioUrl);
-      audio.volume = volumeSlider.value / 100
+      audio.volume = volumeSlider.value / 100;
     }
     audio.play();
     startTimer();
@@ -47,11 +46,10 @@ playCenter.addEventListener("click", function () {
     const audioUrl = this.getAttribute("data-previewSong");
 
     if (!audioUrl) {
-      alert('nessuna canzone selezionata');
+      alert("nessuna canzone selezionata");
       return;
     }
-    if (!audio)
-      audio = new Audio(audioUrl);
+    if (!audio) audio = new Audio(audioUrl);
 
     audio.play();
     startTimer();
@@ -73,11 +71,10 @@ playButtonMobile.addEventListener("click", function () {
     const audioUrl = this.getAttribute("data-previewSong");
 
     if (!audioUrl) {
-      alert('nessuna canzone selezionata');
+      alert("nessuna canzone selezionata");
       return;
     }
-    if (!audio)
-      audio = new Audio(audioUrl);
+    if (!audio) audio = new Audio(audioUrl);
 
     audio.play();
     startTimer();
@@ -130,5 +127,12 @@ function updateTimeDisplays() {
   }
 }
 
-
-
+// playbutton homepage nelle card
+document.querySelectorAll(".bg-cards1, .bg-cards").forEach((card) => {
+  const playButton = card.querySelector(".start-button");
+  playButton.classList.add("d-none");
+  card.addEventListener("mouseenter", () =>
+    playButton.classList.remove("d-none")
+  );
+  card.addEventListener("mouseleave", () => playButton.classList.add("d-none"));
+});
