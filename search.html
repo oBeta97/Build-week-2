@@ -25,13 +25,15 @@
 
                         <ul class="navbar-nav flex-row flex-md-column justify-content-around w-100 gap-2">
                             <li class="nav-item ">
-                                <a href="./index.html" class="text-decoration-none text-light d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
+                                <a href="./index.html"
+                                    class="text-decoration-none text-light d-flex flex-column flex-md-row align-items-center gap-0 gap-md-2">
                                     <i class="bi bi-house-door-fill fs-4"></i>
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="javascript:void(0);" class="text-decoration-none text-light fw-bold d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
+                                <a href="javascript:void(0);"
+                                    class="text-decoration-none text-light fw-bold d-flex flex-column flex-md-row align-items-center fw-lighter gap-0 gap-md-2">
                                     <i class="bi bi-search fs-5"></i>
                                     Cerca
                                 </a>
@@ -56,9 +58,8 @@
 
                         <hr class="border-bottom border-2 w-100 d-none d-md-block" />
 
-                        <ul class="navbar-nav d-none d-md-block">
-                            <li class="nav-item">ciao</li>
-                            <li class="nav-item">ciao</li>
+                        <ul class="navbar-nav d-none d-md-block" id="album">
+
                         </ul>
 
                     </nav>
@@ -401,6 +402,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card border-0 py-2 cardw">
+                        <div class="row g-0">
+                            <div class="col-md-3">
+                                <img src="./assets/imgs/main/image-10.jpg" class="img-fluid rounded-circle"
+                                    alt="cover" />
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0" id="card-body">
+                                    <p class="card-title fw-bold">Alessandro Varchetta</p>
+                                    <p class="card-text"><small>Kakapo song</small></p>
+                                    <p class="card-text">
+                                        <small class="text-body-secondary"><i class="bi bi-music-note-beamed"></i>
+                                            Kakapo</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </aside>
             </div>
 
@@ -417,6 +436,7 @@
     <script src="./assets/js/fixPagination.js"></script>
     <script src="./assets/js/fetches.js"></script>
     <script src="./assets/js/search.js"></script>
+    <script src="assets/js/playlist.js"></script>
 </body>
 
 </html>
