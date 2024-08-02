@@ -72,23 +72,27 @@ async function getTracklist (url) {
     const tracklistDiv = document.getElementById('tracklist')
 
     document.querySelector('.start-button.hero-start-button').setAttribute('data-song', tracklist.data[0].preview);
-    document.querySelector('.bi-shuffle.start-button').
-      setAttribute(
-        'data-song', 
-        tracklist.data[
-          RandomNumberGenerator(0, tracklist.data.length -1)
-        ].preview
-      )
-    ;
+    
+    
+    const shuffleBtn = document.querySelector('.bi-shuffle.start-button');
+    const randomSong = tracklist.data[RandomNumberGenerator(0, tracklist.data.length -1)];
+
+    shuffleBtn.setAttribute('data-song', randomSong.preview);
+    shuffleBtn.setAttribute('data-songImg', randomSong.album.cover_small);
+    shuffleBtn.setAttribute('data-songName', randomSong.title_short);
 
     for (let i=0; i<tracklist.data.length ;i++) {
         tracklistDiv.innerHTML += `
         <div class="row d-flex align-items-center mb-2">
-              <div class="col-1 text-center">
+              <div class="col-1 text-center d-flex justify-content-center">
                 <small id="trackNumber">
                   ${i+1}
                 </small>
-                <button class="btn btn-success rounded-circle start-button row-button" data-song="${tracklist.data[i].preview}">
+                <button class="btn btn-success rounded-circle start-button row-button" 
+                  data-song="${tracklist.data[i].preview}"
+                  data-songName="${tracklist.data[i].title_short}"
+                  data-songImg="${tracklist.data[i].album.cover_small}"
+                >
                   <i class="text-black bi bi-play-fill"></i>
                 </button>
               </div>
@@ -98,7 +102,7 @@ async function getTracklist (url) {
               <div class="col-6">
                 <small id="trackTitle">${tracklist.data[i].title}</small></a>
                 <div class="d-block d-md-none">
-                  <a href="#"><small id="trackReprod">${tracklist.data[i].rank.toLocaleString()}</small></a>
+                  <small class="small" id="trackReprod">${tracklist.data[i].rank.toLocaleString()}</small>
                 </div>
               </div>
               <div class="col-2 text-end d-none d-md-block">

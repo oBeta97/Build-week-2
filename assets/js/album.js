@@ -4,40 +4,40 @@ const playButtonMobile = document.getElementById("play-button");
 
 window.addEventListener("load", function (event) {
 
-    const eventUpdate = new URLSearchParams(location.search).get('albumId')
+  const eventUpdate = new URLSearchParams(location.search).get('albumId')
 
-    if(!eventUpdate){
-      mainContent.innerHTML = `
+  if (!eventUpdate) {
+    mainContent.innerHTML = `
         <div class="vh-100 w-100 d-flex justify-content-center align-items-center">
           <h2> 404 Not Found</h2>
         </div>
       `;
-      return;
-    }
-    
+    return;
+  }
 
-    createPage(eventUpdate)
+
+  createPage(eventUpdate)
 
 })
 
 async function createPage(albumId) {
 
-    const album = await getAlbum(albumId);
-  
+  const album = await getAlbum(albumId);
 
-    if (!album || album.error || !album.tracks || !album.tracks.data) {
-      throw new Error(album.error ? album.error.message : 'Nessun dato disponibile per questo album.');
+
+  if (!album || album.error || !album.tracks || !album.tracks.data) {
+    throw new Error(album.error ? album.error.message : 'Nessun dato disponibile per questo album.');
   }
 
-    let songs = '';
+  let songs = '';
 
-    for (let i = 0; i < album.tracks.data.length; i++) {
-        const duration = formatTime(album.tracks.data[i].duration)
-        const rankFormatted = album.tracks.data[i].rank.toLocaleString();
-      
-        songs += `
+  for (let i = 0; i < album.tracks.data.length; i++) {
+    const duration = formatTime(album.tracks.data[i].duration)
+    const rankFormatted = album.tracks.data[i].rank.toLocaleString();
+
+    songs += `
             <div class="row">
-              <div class="col-1 d-none d-md-block" id="6628424">
+              <div class="col-1 d-none d-md-flex justify-content-center align-items-center">
                 <p class="text-secondary text-center" id="trackNumber">
                   ${i + 1}
                 </p>
@@ -53,7 +53,11 @@ async function createPage(albumId) {
                 <p>${rankFormatted}</p>
               </div>
               <div class="col-1 fs-3 d-block d-md-none d-flex align-items-center">
-                <button class="btn d-block d-md-none btn-success rounded-circle start-button row-button" data-song="${album.tracks.data[i].preview}">
+                <button class="btn d-block d-md-none btn-success rounded-circle start-button row-button"
+                  data-song="${album.tracks.data[i].preview}"
+                  data-songName="${album.tracks.data[i].title_short}"
+                  data-songImg="${album.tracks.data[i].album.cover_small}"
+                >
                   <i class="text-black bi bi-play-fill"></i>
                 </button>
                 <i class="bi bi-three-dots-vertical"></i>
@@ -64,8 +68,8 @@ async function createPage(albumId) {
               </div>
             </div>
     `;
-    }
-    mainContent.innerHTML = `
+  }
+  mainContent.innerHTML = `
     <div class="row">
           <div class="col-12 d-flex flex-column justify-content-center align-items-center ">
 
@@ -104,15 +108,21 @@ async function createPage(albumId) {
                   <i class="bi bi-three-dots d-none d-md-block"></i>
                 </div>
                 <div class="col-3 col-md-2 order-md-1 d-flex flex-row justify-content-between">
-                  <i class="bi bi-shuffle d-md-none"></i>
-                  <button class="btn btn-success rounded-circle start-button hero-start-button" data-song="${album.tracks.data[0].preview}">
+                <button class="btn">
+                  <i class="bi bi-shuffle start-button" data-song=""></i>
+                </button>
+                  <button class="btn btn-success rounded-circle start-button hero-start-button" 
+                    data-song="${album.tracks.data[0].preview}"
+                    data-songName="${album.tracks.data[0].title_short}"
+                    data-songImg="${album.tracks.data[0].album.cover_small}"
+                  >
                     <i class="text-black bi bi-play-fill"></i>
                   </button>
                 </div>
               </div>
             </div>
 
-             <div class="row d-flex align-items-center justify-content-between py-4 bg-black" id="tracklist">
+             <div class="row d-flex align-items-center justify-content-between py-4 bg-black px-3 w-100" id="tracklist">
 
              ${songs}
 
@@ -122,24 +132,31 @@ async function createPage(albumId) {
 
         </div>`;
 
+  const shuffleBtn = document.querySelector('.bi-shuffle.start-button');
+  const randomSong = album.tracks.data[RandomNumberGenerator(0, album.tracks.data.length - 1)];
 
-        const playButtons = document.querySelectorAll('.start-button');
+  shuffleBtn.setAttribute('data-song', randomSong.preview);
+  shuffleBtn.setAttribute('data-songImg', randomSong.album.cover_small);
+  shuffleBtn.setAttribute('data-songName', randomSong.title_short);
 
-        playButtons.forEach(element => {
-          element.addEventListener('click', function(e){
-            console.log(this.dataset.song);
-            TogglePlayer(this.dataset.song, this);
-          })
-        });
-    
-        playCenter.addEventListener('click',function(event){
-          TogglePlayer(this.dataset.song, this);
-        });
-    
-        playButtonMobile.addEventListener('click',function(event){
-          TogglePlayer(this.dataset.song, this);
-        });
-    
+
+  const playButtons = document.querySelectorAll('.start-button');
+
+  playButtons.forEach(element => {
+    element.addEventListener('click', function (e) {
+      console.log(this.dataset.song);
+      TogglePlayer(this.dataset.song, this);
+    })
+  });
+
+  playCenter.addEventListener('click', function (event) {
+    TogglePlayer(this.dataset.song, this);
+  });
+
+  playButtonMobile.addEventListener('click', function (event) {
+    TogglePlayer(this.dataset.song, this);
+  });
+
 }
 
 

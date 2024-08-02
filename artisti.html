@@ -25,25 +25,25 @@
             <div class="d-block d-md-none bg-body-tertiary rounded-3 w-100">
               <div class="row d-flex justify-content-between text-center align-items-center">
                 <!-- Album Cover Section -->
-                <div class="col-3">
-                  <img src="assets/imgs/main/image-12.jpg" class="img-fluid rounded-start" alt="Album Cover" />
+                <div class="col-2">
+                  <img src="" class="img-fluid rounded-start media-player-img" alt="No song Selected" />
                 </div>
 
                 <!-- Music Title or Information Section -->
-                <div class="d-flex col-6 text-secondary align-items-center fs-5 my-1">
-                  <span id="music-title">Song Title</span>
-                  <span class="ms-2">by Artist Name</span>
+                <div class="d-flex col-7 text-secondary align-items-center fs-5 my-1 text-light">
+                  <span class="music-title"></span>
+                  <span class="ms-2" id="artistName"></span>
                 </div>
 
                 <!-- Media Player Controls Section -->
-                <div class="d-flex col-3 text-secondary align-items-center justify-content-end fs-5">
+                <div class="d-flex col-3 text-secondary align-items-center justify-content-evenly fs-5 text-light">
                   <i class="bi bi-music-player me-2"></i>
                   <i class="bi bi-heart fs-6 me-2"></i>
-                  <button class="btn btn-success btn-sm rounded-circle">
-                    <i class="text-black bi bi-play-fill fs-6" id="play-button"></i>
+                  <button class="btn btn-success btn-sm rounded-circle" id="play-button">
+                    <i class="text-black bi bi-play-fill fs-6"></i>
                   </button>
                   <!-- Placeholder for play progress bar -->
-                  <div class="playBar mt-1 ms-2" style="width: 60px">
+                  <div class="playBar d-none mt-1 ms-2" style="width: 60px">
                     <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                       aria-valuemax="100"></div>
                   </div>
@@ -81,7 +81,7 @@
                 <i class="bi bi-bookmark"></i>I tuoi Episodi
               </li>
             </ul>
-            <hr class="" />
+            <hr class="border-bottom border-2 w-100 d-none d-md-block d-none d-md-block" />
             <ul class="navbar-nav d-none d-md-block">
               <li class="nav-item">ciao</li>
               <li class="nav-item">ciao</li>
@@ -155,9 +155,12 @@
         </div>
       </div>
 
-      <div class="col-12 order-3 d-none d-md-block">
+      <div class="col-12 order-3 d-none d-md-block p-0">
         <div class="player bg-dark" id="desktopMusicPlayer">
-          <div class="volume-controls"></div>
+          <div class="volume-controls d-flex align-items-center justify-content-start">
+            <img src="" class="img-fluid rounded-start media-player-img" alt="No song Selected">
+            <span class="music-title"></span>
+          </div>
           <div class="player-center">
             <div class="player-controls">
               <img style="height: 1rem; margin-right: 1rem; opacity: 0.8" src="./assets/imgs/icons/shuffle.png" />
