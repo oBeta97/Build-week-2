@@ -12,6 +12,7 @@ const playCenter = document.getElementById("playCenter");
 const playButtonMobile = document.getElementById("play-button");
 const volumeSlider = document.getElementById("volumeSlider");
 
+
 playButton.addEventListener("click", function () {
   if (audio && !audio.paused) {
     audio.pause();
@@ -128,4 +129,6 @@ function updateTimeDisplays() {
     console.log(audio.duration);
   }
 }
+
+
 
