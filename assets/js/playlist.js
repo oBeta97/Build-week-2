@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     const albumPlaylist = document.getElementById('album');
 
     const playListTitles = [
-        'Good Vibes', 'Hot Summer', 'Le canzoni della cacca', 'Chillout', 'Ale gioca ad Apex', 'Pietro e le canzoni della cacca', 'Paolo e le feste paesane', 'Marco lo stolto', 'Workout', 'relaxing',
+        'Good Vibes', 'Hot Summer', 'Le kakapoes', 'Chillout', 'Ale gioca ad Apex', 'Pietro e i kakapo', 'Paolo e le feste paesane', 'Marco lo stolto', 'Workout', 'relaxing',
         'Time Travel Tunes', 'Superhero Workout',
         'Lazy Sunday Afternoon', 'Midnight Snacks & Beats', 'Bubble Bath Bliss', 'Cooking with Fire',
         'Robot Dance Off', 'Magical Forest Vibes', 'Secret Agent Grooves', 'Comedy Club Hits',
