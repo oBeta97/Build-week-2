@@ -136,3 +136,14 @@ document.querySelectorAll(".bg-cards1, .bg-cards").forEach((card) => {
   );
   card.addEventListener("mouseleave", () => playButton.classList.add("d-none"));
 });
+
+
+const artistCard = document.querySelectorAll('.artistCard')
+
+artistCard.forEach(card =>{
+  card.onclick = function() {
+     const artistId =this.id
+     const targetUrl = `artisti.html?artistId=${artistId}`
+     window.location.href = targetUrl
+  }
+})
