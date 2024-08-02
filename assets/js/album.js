@@ -41,7 +41,11 @@ async function createPage(albumId) {
                 <p class="text-secondary text-center" id="trackNumber">
                   ${i + 1}
                 </p>
-                <button class="btn btn-success rounded-circle start-button row-button" data-song="${album.tracks.data[i].preview}">
+                <button class="btn btn-success rounded-circle start-button row-button" 
+                  data-song="${album.tracks.data[i].preview}"
+                  data-songName="${album.tracks.data[i].title_short}"
+                  data-songImg="${album.tracks.data[i].album.cover_small}"
+                >
                   <i class="text-black bi bi-play-fill"></i>
                 </button>
               </div>

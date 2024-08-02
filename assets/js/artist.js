@@ -71,8 +71,11 @@ async function getTracklist (url) {
     console.log('traccia', tracklist)
     const tracklistDiv = document.getElementById('tracklist')
 
-    document.querySelector('.start-button.hero-start-button').setAttribute('data-song', tracklist.data[0].preview);
+    const playFirstSongBtn =document.querySelector('.start-button.hero-start-button');
     
+    playFirstSongBtn.setAttribute('data-song', tracklist.data[0].preview);
+    playFirstSongBtn.setAttribute('data-songImg', tracklist.data[0].album.cover_small);
+    playFirstSongBtn.setAttribute('data-songName', tracklist.data[0].title_short);
     
     const shuffleBtn = document.querySelector('.bi-shuffle.start-button');
     const randomSong = tracklist.data[RandomNumberGenerator(0, tracklist.data.length -1)];
