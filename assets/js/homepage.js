@@ -11,6 +11,12 @@ const playButton = document.getElementById("playButton");
 const playCenter = document.getElementById("playCenter");
 const playButtonMobile = document.getElementById("play-button");
 const volumeSlider = document.getElementById("volumeSlider");
+const playerImg = document.getElementById('playerImg');
+const musicTitleMobile = document.getElementById('music-title')
+const mediaPlayerImg = document.querySelector('.media-player-img');
+const musicTitle = document.querySelector('.music-title');
+
+// "https://e-cdns-images.dzcdn.net/images/cover/dd2ec26052911176d1810125f736e32a/500x500-000000-80-0-0.jpg"
 
 playButton.addEventListener("click", function () {
   if (audio && !audio.paused) {
@@ -31,6 +37,10 @@ playButton.addEventListener("click", function () {
     this.innerHTML = `<span class="px-2 text-white text-nowrap small">pausa</span>`;
     playCenter.src = "./assets/imgs/icons/pause_musicbar.png";
     playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
+    playerImg.src = "https://e-cdns-images.dzcdn.net/images/cover/dd2ec26052911176d1810125f736e32a/56x56-000000-80-0-0.jpg"
+    mediaPlayerImg.src = "https://e-cdns-images.dzcdn.net/images/cover/dd2ec26052911176d1810125f736e32a/56x56-000000-80-0-0.jpg"
+    musicTitleMobile.innerText = 'KAKAPO!'
+    musicTitle.innerText = 'KAKAPO!'
     // console.log('Playing audio:', audioUrl);
   }
 });
