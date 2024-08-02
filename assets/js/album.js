@@ -1,5 +1,6 @@
 const mainContent = document.getElementById('mainContent')
-
+const playCenter = document.getElementById("playCenter");
+const playButtonMobile = document.getElementById("play-button");
 
 window.addEventListener("load", function (event) {
 
@@ -35,10 +36,14 @@ async function createPage(albumId) {
         const rankFormatted = album.tracks.data[i].rank.toLocaleString();
       
         songs += `
-     <div class="col-1 d-none d-md-block" id="6628424">
-                <p class="text-secondary text-center">
+            <div class="row">
+              <div class="col-1 d-none d-md-block" id="6628424">
+                <p class="text-secondary text-center" id="trackNumber">
                   ${i + 1}
                 </p>
+                <button class="btn btn-success rounded-circle start-button row-button" data-song="${album.tracks.data[i].preview}">
+                  <i class="text-black bi bi-play-fill"></i>
+                </button>
               </div>
               <div class="col-10 col-md-8">                
                   <h5>${album.tracks.data[i].title}</h5>
@@ -47,13 +52,17 @@ async function createPage(albumId) {
               <div class="col-2 d-none d-md-block">
                 <p>${rankFormatted}</p>
               </div>
-              <div class="col-1 fs-3 d-block d-md-none">
+              <div class="col-1 fs-3 d-block d-md-none d-flex align-items-center">
+                <button class="btn d-block d-md-none btn-success rounded-circle start-button row-button" data-song="${album.tracks.data[i].preview}">
+                  <i class="text-black bi bi-play-fill"></i>
+                </button>
                 <i class="bi bi-three-dots-vertical"></i>
               </div>
 
               <div class="col-1 d-none d-md-block">
                 <p>${duration}</p>
               </div>
+            </div>
     `;
     }
     mainContent.innerHTML = `
@@ -96,12 +105,14 @@ async function createPage(albumId) {
                 </div>
                 <div class="col-3 col-md-2 order-md-1 d-flex flex-row justify-content-between">
                   <i class="bi bi-shuffle d-md-none"></i>
-                  <i class="bi bi-caret-right-fill rounded-circle bg-success px-3 py-2"></i>
+                  <button class="btn btn-success rounded-circle start-button hero-start-button" data-song="${album.tracks.data[0].preview}">
+                    <i class="text-black bi bi-play-fill"></i>
+                  </button>
                 </div>
               </div>
             </div>
 
-             <div class="row d-flex align-items-center justify-content-between py-4 bg-black px-3" id="songs">
+             <div class="row d-flex align-items-center justify-content-between py-4 bg-black px-3" id="tracklist">
 
              ${songs}
 
@@ -109,7 +120,26 @@ async function createPage(albumId) {
 
           </div>
 
-        </div>`
+        </div>`;
+
+
+        const playButtons = document.querySelectorAll('.start-button');
+
+        playButtons.forEach(element => {
+          element.addEventListener('click', function(e){
+            console.log(this.dataset.song);
+            TogglePlayer(this.dataset.song, this);
+          })
+        });
+    
+        playCenter.addEventListener('click',function(event){
+          TogglePlayer(this.dataset.song, this);
+        });
+    
+        playButtonMobile.addEventListener('click',function(event){
+          TogglePlayer(this.dataset.song, this);
+        });
+    
 }
 
 

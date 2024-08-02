@@ -1,6 +1,7 @@
 let audio = null;
 let timer = null;
 const volumeSlider = document.getElementById("volumeSlider");
+const albumImageMediaPlayer = document.getElementById('albumImageMediaPlayer');
 
 function TogglePlayer(audioUrl, target) {
 
@@ -40,6 +41,8 @@ function TogglePlayer(audioUrl, target) {
         playButtonMobile.innerHTML = `<i class="bi bi-pause-fill"></i>`;
         playButtonMobile.setAttribute('data-song', audioUrl);
         
+        // albumImageMediaPlayer.src = 
+
         // console.log('Playing audio:', audioUrl);
     }
 
