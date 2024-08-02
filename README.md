@@ -40,11 +40,11 @@ Abbiamo utilizzato l'API di Deezer fornita da Strive School, disponibile all'ind
 
 1. Clonare il repository:
     ```bash
-    git clone https://github.com/tuo-username/nome-del-repository.git
+    git clone https://github.com/oBeta97/Build-week-2.git
     ```
 2. Navigare nella directory del progetto:
     ```bash
-    cd nome-del-repository
+    cd Build-week-2
     ```
 3. Aprire il file `index.html` nel browser preferito.
 
